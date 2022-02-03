@@ -1,0 +1,277 @@
+{% extends 'layout.html' %} 
+{% block content %}
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main">
+      <div class="cont maincont">
+        <article>
+          <div class="prod">
+            <div class="prod-slider-wrap prod-slider-shown">
+              <div class="flexslider prod-slider" id="prod-slider">
+                <ul class="slides">
+                  <li>
+                    <a
+                      data-fancybox-group="prod"
+                      class="fancy-img"
+                      href="http://placehold.it/810x722"
+                    >
+                      <img src="{{ product.image.url }}" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-fancybox-group="prod"
+                      class="fancy-img"
+                      href="http://placehold.it/800x800"
+                    >
+                      <img src="http://placehold.it/550x550" alt="" />
+                    </a>
+                  </li>
+                </ul>
+                <div class="prod-slider-count">
+                  <p>
+                    <span class="count-cur">1</span> /
+                    <span class="count-all">2</span>
+                  </p>
+                  <p class="hover-label prod-slider-zoom">
+                    <i class="icon ion-search"></i><span>Zoom In</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flexslider prod-thumbs" id="prod-thumbs">
+                <ul class="slides">
+                  <li>
+                    <img src="{{ product.image.url }}" alt="" />
+                  </li>
+                  <li>
+                    <img src="http://placehold.it/550x550" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="prod-cont">
+              <div class="prod-rating-wrap">
+                <p data-rating="4" class="prod-rating">
+                  <i class="rating-ico" title="1"></i
+                  ><i class="rating-ico" title="2"></i
+                  ><i class="rating-ico" title="3"></i
+                  ><i class="rating-ico" title="4"></i
+                  ><i class="rating-ico" title="5"></i>
+                </p>
+                <p class="prod-rating-count">7</p>
+              </div>
+              <p class="prod-categs">
+                <a href="#">{{ product.category.title }}</a>
+              </p>
+              <h1>{{ product.title }}</h1>
+              <div class="variations_form cart">
+                <p class="prod-price">S/. {{ product.price }}</p>
+                <p class="prod-excerpt">
+                  Pellentesque habitant morbi tristique senectus et netus et
+                  malesuada fames ac turpis egestas. Vestibulum tortor quam,
+                  feugiat vitae, ultricies eget...
+                  <a id="prod-showdesc" class="prod-excerpt-more" href="#"
+                    >Leer más</a
+                  >
+                </p>
+                <div class="prod-add">
+                  <div class="variations">
+                    <div class="variations-row">
+                      <div class="label"><label>Color</label></div>
+                      <div class="value">
+                        <select>
+                          <option value="">Seleccionar</option>
+                          <option value="blue">Azul</option>
+                          <option value="green">Verde</option>
+                          <option value="yellow">Amarillo</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="{% url 'tienda:addCart' product.id %}" class="button">
+                    <i class="icon ion-android-cart"></i> Agregar Carrito
+                  </a>
+                  <p class="qnt-wrap prod-li-qnt">
+                    <a href="#" class="qnt-plus prod-li-plus"
+                      ><i class="icon ion-arrow-up-b"></i
+                    ></a>
+                    <input type="text" value="1" />
+                    <a href="#" class="qnt-minus prod-li-minus"
+                      ><i class="icon ion-arrow-down-b"></i
+                    ></a>
+                  </p>
+                  <div class="prod-li-favorites">
+                    <a href="wishlist.html" class="hover-label add_to_wishlist"
+                      ><i class="icon ion-heart"></i
+                      ><span>Add to Wishlist</span></a
+                    >
+                  </div>
+                  <p class="prod-li-compare">
+                    <a
+                      href="compare.html"
+                      class="hover-label prod-li-compare-btn"
+                      ><span>Compare</span><i class="icon ion-arrow-swap"></i
+                    ></a>
+                  </p>
+                </div>
+              </div>
+              <div class="prod-props">
+                <dl class="product_meta">
+                  <dt>SKU:</dt>
+                  <dd>2135687</dd>
+                  <dt>Brand:</dt>
+                  <dd><a href="#">BMP</a></dd>
+                  <dt>Weight</dt>
+                  <dd>1 kg</dd>
+                  <dt>Dimensions</dt>
+                  <dd>4 x 50 cm</dd>
+                  <dt>Color</dt>
+                  <dd>Blue, Green</dd>
+                  <dt>Manufacturer</dt>
+                  <dd>Germany</dd>
+                  <dt>Material</dt>
+                  <dd>Metal, Plastic</dd>
+                </dl>
+              </div>
+            </div>
+            <p class="prod-badge">
+              <span class="badge-1">TOP VENTAS</span>
+            </p>
+          </div>
+          <div class="prod-tabs-wrap">
+            <ul class="prod-tabs">
+              <li id="prod-desc" class="active" data-prodtab-num="1">
+                <a data-prodtab="#prod-tab-1" href="#">Description</a>
+              </li>
+              <li data-prodtab-num="2" id="prod-props">
+                <a data-prodtab="#prod-tab-2" href="#"
+                  >Additional information</a
+                >
+              </li>
+            </ul>
+            <div class="prod-tab-cont">
+              <p
+                data-prodtab-num="1"
+                class="prod-tab-mob active"
+                data-prodtab="#prod-tab-1"
+              >
+                Description
+              </p>
+              <div class="prod-tab page-styling prod-tab-desc" id="prod-tab-1">
+                <p>
+                  Pellentesque habitant morbi tristique senectus et netus et
+                  malesuada fames ac turpis egestas. Vestibulum tortor quam,
+                  feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
+                  libero sit amet quam egestas semper. Aenean ultricies mi vitae
+                  est. Mauris placerat eleifend leo.
+                </p>
+              </div>
+              <p
+                data-prodtab-num="2"
+                class="prod-tab-mob"
+                data-prodtab="#prod-tab-2"
+              >
+                Additional information
+              </p>
+              <div class="prod-tab" id="prod-tab-2">
+                <dl class="prod-tab-props">
+                  <dt>Weight</dt>
+                  <dd>1 kg</dd>
+                  <dt>Dimensions</dt>
+                  <dd>4 x 50 cm</dd>
+                  <dt>Color</dt>
+                  <dd>
+                    <p><a href="#">Blue</a>, <a href="#">Green</a></p>
+                  </dd>
+                  <dt>Manufacturer</dt>
+                  <dd>
+                    <p><a href="#">Germany</a></p>
+                  </dd>
+                  <dt>Material</dt>
+                  <dd>
+                    <p><a href="#">Metall</a>, <a href="#">Plastic</a></p>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- #main -->
+  </div>
+  <!-- #primary -->
+
+  <!-- Elements -->
+  <div class="content-area width-full">
+    <div class="maincont page-styling page-full">
+      <div
+        class="container mb20 page-styling row-wrap-container row-wrap-nottl"
+      >
+        <div class="row">
+          <div class="cf-lg-4 col-sm-4">
+            <div class="iconbox-item iconbox-i-3">
+              <div class="iconbox-i-top">
+                <p class="iconbox-i-img">
+                  <i class="fa fa-road"></i>
+                </p>
+                <h3>Financing Services</h3>
+              </div>
+              <p>
+                Vestibulum eu odio vitae neque blandit consequat ut nec nisi.
+                Maecenas et velit sem. Nam egestas lectus vel fringilla
+                accumsan.
+              </p>
+            </div>
+          </div>
+          <div class="cf-lg-4 col-sm-4">
+            <div class="iconbox-item iconbox-i-3">
+              <div class="iconbox-i-top">
+                <p class="iconbox-i-img">
+                  <i class="fa fa-truck"></i>
+                </p>
+                <h3>Lead Qualification</h3>
+              </div>
+              <p>
+                Aliquam fermentum tortor lacus, id dictum tellus feugiat non.
+                Donec rutrum ligula sed dui lobortis, id scelerisque sem
+                volutpat.
+              </p>
+            </div>
+          </div>
+          <div class="cf-lg-4 col-sm-4">
+            <div class="iconbox-item iconbox-i-3">
+              <div class="iconbox-i-top">
+                <p class="iconbox-i-img">
+                  <i class="fa fa-shield"></i>
+                </p>
+                <h3>Security Service</h3>
+              </div>
+              <p>
+                Etiam iaculis urna metus, in volutpat dolor faucibus at. Nulla
+                vitae aliquet justo. Aenean in iaculis sapien. Vivamus rutrum
+                hendrerit egestas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container mb60 page-styling row-wrap-container row-wrap-nottl"
+      >
+        <div class="promobox-i promobox-i-hasbtn">
+          <h3>Optio Quis Inventore</h3>
+          <p>
+            Nam dictum condimentum eros, eu tincidunt ex hendrerit sed. Fusce
+            eleifend rutrum magna vel scelerisque. Donec purus sapien, tincidunt
+            a congue quis, hendrerit quis massa.
+          </p>
+          <a class="promobox-i-link" href="#">READ MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
